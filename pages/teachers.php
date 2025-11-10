@@ -42,8 +42,6 @@ include __DIR__ . '/../includes/header.php';
 </div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
-<?php
-session_start();
 if (!isset($_SESSION['user'])) {
     header('Location: login.php');
     exit;

@@ -44,16 +44,6 @@ include __DIR__ . '/../includes/header.php';
 </div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
-<?php
-session_start();
-if (!isset($_SESSION['user'])) {
-    header('Location: login.php');
-    exit;
-}
-$user = htmlspecialchars($_SESSION['user']);
-$role = isset($_SESSION['role']) ? htmlspecialchars($_SESSION['role']) : 'Teacher';
-?>
-<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
