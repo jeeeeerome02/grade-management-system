@@ -1,0 +1,5 @@
+/* Custom tweaks on top of Bootstrap */
+body { background: #f5f9ff; }
+.card { border: 0; }
+.navbar-brand { font-weight:700 }
+.container main { min-height: 60vh }
