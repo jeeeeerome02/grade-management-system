@@ -97,11 +97,12 @@ function getRecentGradeEntries($pdo, $teacher_id, $limit = 10) {
         JOIN users u ON e.student_id = u.user_id
         JOIN classes c ON e.class_id = c.class_id
         JOIN subjects s ON c.subject_id = s.subject_id
-        WHERE c.teacher_id = :teacher_id AND g.recorded_by = :teacher_id
+        WHERE c.teacher_id = :teacher_id AND g.recorded_by = :recorded_by
         ORDER BY g.date_recorded DESC
         LIMIT :limit
     ");
     $stmt->bindValue(':teacher_id', $teacher_id, PDO::PARAM_INT);
+    $stmt->bindValue(':recorded_by', $teacher_id, PDO::PARAM_INT);
     $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
     $stmt->execute();
     return $stmt->fetchAll();

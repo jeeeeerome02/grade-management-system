@@ -52,12 +52,43 @@ $current_page = basename($_SERVER['PHP_SELF']);
     flex: 0 0 280px;
     width: 280px;
     max-width: 280px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1000;
   }
   
   .sidebar {
-    position: sticky;
-    top: 20px;
     width: 280px;
+    height: 100%;
+    padding: 20px 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb {
+    background: #e5e7eb;
+    border-radius: 10px;
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb:hover {
+    background: #d1d5db;
+  }
+  
+  /* Add padding to content to account for fixed sidebar */
+  .content-col {
+    margin-left: 280px;
   }
   
   .sidebar-card {
@@ -109,6 +140,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
   .content-col {
     flex: 1;
     max-width: calc(100% - 280px);
+    margin-left: 280px;
   }
   
   /* Mobile Responsive */
@@ -141,6 +173,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     
     .content-col {
       max-width: 100%;
+      margin-left: 0;
       padding-left: 1rem !important;
       padding-right: 1rem;
       margin-top: 60px;
