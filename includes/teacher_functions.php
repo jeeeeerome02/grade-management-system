@@ -1,6 +1,4 @@
 <?php
-// Helper functions for teacher-specific queries
-
 function getTeacherClasses($pdo, $teacher_id) {
     $stmt = $pdo->prepare("
         SELECT 
